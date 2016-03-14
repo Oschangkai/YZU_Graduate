@@ -43,7 +43,7 @@ def main(argv):
     }
 
     portal = req_ses.post(login_url, data = form)
-    # portal = req_ses.get(main_url)
+    portal = req_ses.get(main_url)
     print(portal.text)
 
 if __name__ == "__main__":
