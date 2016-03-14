@@ -10,8 +10,8 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hu:p:")
     except getopt.GetoptError:
-      print('main.py -u <username> -p <password>')
-      sys.exit(2)
+        print('main.py -u <username> -p <password>')
+        sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
             print('main.py -u <username> -p <password>')
@@ -43,7 +43,7 @@ def main(argv):
     }
 
     portal = req_ses.post(login_url, data = form)
-    portal = req_ses.get(main_url)
+    portal = req_ses.get("https://portal.yzu.edu.tw/VC2/Student/Book50/StdGetPoint.aspx")
     print(portal.text)
 
 if __name__ == "__main__":
