@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Properties -->
+  <title>我不要延畢 | 登入</title>
+  <link rel="stylesheet" type="text/css" href="assets/components/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/site.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/components/container.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/grid.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/header.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/image.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/components/divider.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/segment.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/form.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/input.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/button.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/list.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/message.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/icon.css">
+
+  <script src="assets/jquery-2.2.2.min.js"></script>
+  <script src="assets/components/form.js"></script>
+  <script src="assets/components/transition.js"></script>
+
+  <style type="text/css">
+		body{
+			background-image:url('img/banner.jpeg');
+			background-repeat: no-repeat; 
+			background-size: cover;
+		}
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+  <script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            account: {
+              identifier  : 'account',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : '帳號不得為空!'
+                }
+              ]
+            },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : '密碼不得為空!'
+                },
+                {
+                  type   : 'length[6]',
+                  prompt : '密碼長度至少六位數'
+                }
+              ]
+            }
+          }
+        })
+      ;
+    })
+  ;
+  </script>
+</head>
+<body>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui green image header">
+      <!--<img src="assets/images/logo.png" class="image">-->
+      <div class="content">
+        我不要延畢 | 登入
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <!--<i class="user icon"></i>-->
+            <input type="text" name="account" placeholder="帳號">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <!--<i class="lock icon"></i>-->
+            <input type="password" name="password" placeholder="密碼">
+          </div>
+        </div>
+        <div class="ui green fluid large submit button">登入</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      新用戶？ <a href="#">註冊</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
